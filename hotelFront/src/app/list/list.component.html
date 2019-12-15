@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="sticky">
+            <input type="text" style="color:#4c4c4c; font-weight: 900" class="form-control " name="searchString" placeholder="Enter hotel name to search" [(ngModel)]="searchString">
+          </div>
+      <button (click)="onSortLow()">SortByLower</button>
+      <button (click)="onSortHigh()">SortByhigher</button>
+      <button (click)="onFilter()">Filter</button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Host_Name</th>
+            <th scope="col">Neighbourhood_Group</th>
+            <th scope="col">Neighbourhood</th>
+            <th scope="col">Latitude</th>
+            <th scope="col">Longitude</th>
+            <th scope="col">RoomType</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let i of list| arrayFilter:searchString">
+          
+            <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.host_name}}</td>
+            <td >{{i.neighbourhood_group}}</td>
+            <td>{{i.neighbourhood}}</td>
+            <td>{{i.latitude}}</td>
+            <td>{{i.longitude}}</td>
+            <td>{{i.room_type}}</td>
+            <td>{{i.price}}</td>
+          </tr>
+     
+        </tbody>
+      </table> 
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
